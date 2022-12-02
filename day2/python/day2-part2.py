@@ -14,7 +14,7 @@ def main():
     with open(i_p, "r") as f:
         lines = f.readlines()
         for line in lines:
-            o, m = line.split()
+            o, m = line[0], line[2]
             if m == "Z":
                 # I need to win
                 p = (d[o] % 3) + 1

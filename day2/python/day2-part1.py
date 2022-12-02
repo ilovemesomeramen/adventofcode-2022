@@ -14,7 +14,7 @@ def main():
     with open(i_p, "r") as f:
         lines = f.readlines()
         for line in lines:
-            o, m = line.split()
+            o, m = line[0], line[2]
             o, m = d[o], d[m]
             if o == m:
                 # Draw
