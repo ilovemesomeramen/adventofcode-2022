@@ -10,18 +10,15 @@ else:
 def part1():
     max_val = 0
     with open(i_p, "r") as f:
-        lines = f.readlines() + ["\n"]
-        o = 0
         while True:
-            count = 0
-            if o == len(lines):
+            line = f.readline()
+            if not line:
                 break
-            for i, line in enumerate(lines[o:]):
-                line = line.strip()
-                if line:
-                    count += int(line)
-                else:
-                    o += i + 1
+            count = 0
+            while True:
+                count += int(line)
+                line = f.readline()
+                if not line or line == "\n":
                     break
             if count > max_val:
                 max_val = count

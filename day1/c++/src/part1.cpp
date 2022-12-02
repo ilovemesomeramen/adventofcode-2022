@@ -2,9 +2,10 @@
 #include <fstream>
 #include <string>
 
-int main() {
+int main(int argc, char *argv[]) {
+  std::string input_path = argc > 1 ? argv[1] : "input";
   std::string line;
-  std::ifstream input ("input");
+  std::ifstream input (input_path);
   int max = 0;
   while (std::getline(input, line)){
     int cal_count = 0;
