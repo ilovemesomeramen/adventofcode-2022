@@ -12,13 +12,13 @@ runs=()
 
 echo "Running day $day part $part"
 
-cd "./Day-$day" || exit
+cd "./day$day" || exit
 
 for lang_f in */; do
   runs+=("${lang_f}day$day-part$part"*)
 done
 
-run_command="hyperfine --warmup 3 --export-markdown ./results.md"
+run_command="hyperfine -N --warmup 3 --export-markdown ./results.md"
 for val in "${runs[@]}"; do
   run_command="$run_command '$val'"
 done

@@ -17,12 +17,14 @@ def part2():
                     o += i + 1
                     break
             if count > top_3[2]:
-                top_3[2] = count
+                top_3[2] = top_3[1]
+                top_3[1] = top_3[0]
+                top_3[0] = count
             elif count > top_3[1]:
+                top_3[2] = top_3[1]
                 top_3[1] = count
             elif count > top_3[0]:
-                top_3[0] = count
-            top_3.sort(reverse=True)
+                top_3[2] = count
     return sum(top_3)
 
 
